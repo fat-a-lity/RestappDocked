@@ -85,7 +85,7 @@ Send the default info plus filter (any attribute to identify the document you wa
 
 ###Problems i ran into early on
 
-eing the first ever Flask,Mongodb,Docker Project i ever touched and being the first time hearing concept of REST api,
+Being the first ever Flask,Mongodb,Docker Project i ever touched and being the first time hearing concept of REST api,
 first step was learning these concepts starting from REST api
 @ishmeet1995 was the main source of learning and can see a major influence in the code too.
 https://medium.com/@ishmeet1995/how-to-create-restful-crud-api-with-python-flask-mongodb-and-docker-8f6ccb73c5bc
