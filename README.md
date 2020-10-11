@@ -31,8 +31,7 @@ import libraries pymongo,flask
 ### CRUD operations
 
 Class MongoAPI is defined to interact with mongodb  <br />
-Connection to cluster is defined inside __init__ function
-
+Connection to cluster is defined inside __init__ function <br />
 Client is predefined and database and cluster names are to be passed.
 read, write, update and delete functions are defined under the class
 And data is passed from app endpoints via various methods
@@ -42,11 +41,10 @@ database : Example
 collection : test1
 
 After running the project using docker run
-Go to http://0.0.0.0:5001/mongodb (page for queries)
-
+Go to http://0.0.0.0:5001/mongodb (page for queries) <br />
 Sending database and collection info is necessary for any operation
 
-READ
+READ <br />
 Send database and collection info as json. It returns the whole data
 ```
 @app.route('/mongodb', methods=['GET'])
@@ -62,7 +60,8 @@ def mongo_read():
                     status=200,
                     mimetype='application/json')
 ```
-data is passed to the above function and it calls read function within the class
+data is passed to the above function and it calls read function within the class <br />
+An error 400 is specified to catch the exception when no data is passed
 ```
 def read(self):
        log.info('Reading All Data')
@@ -72,7 +71,7 @@ def read(self):
 ```
 find() is used to retrieve the documents
 
-Write
+Write <br />
 Send the default info (connection information) plus the data you want to create
 ```
 @app.route('/mongodb', methods=['POST'])
@@ -99,7 +98,7 @@ def write(self, data):
        return output
 
 ```
-Update
+Update <br />
 Send the default info plus filter (any attribute to identify the document you want to change) and datatobeupdated (new value)
 ```
 @app.route('/mongodb', methods=['PUT'])
@@ -126,7 +125,7 @@ def update(self):
       return output
 
 ```
-Delete
+Delete <br />
 Send the default info plus filter (any attribute to identify the document you want to Delete)
 ```
 @app.route('/mongodb', methods=['DELETE'])
@@ -156,21 +155,25 @@ That's it for the CRUD operations
 
 ### Approach
 
-Being the first ever Flask, Mongodb, Docker Project I ever touched and being the first time hearing concept of REST api,
-First step was learning these concepts starting from REST api
-
-Database was set up in Mongodb Atlas
+Being the first ever Flask, Mongodb, Docker Project I ever touched and being the first time hearing concept of REST api, <br />
+First step was learning these concepts starting from REST api <br />
+Database was set up in Mongodb Atlas <br />
 MongoDb Compass was used to view the database and changes
+
 Some troublesome codes were
 
-Missing out on importing Response from Flask
-Trying to figure out sending of json without having a TypeView error
-Before dockerising flask app was to run with host and port commands in cmd else default localhost/5000 kicks in
-dnspython was a library I missed out on
-It had to be added to requirement so necessary change was added to pymongo to include extras
-Another issue was docker getting in trouble with pip and pip3
-An extensive search for the same gave a workaround using IF condition to explicitly specify the correct usage and not get into trouble
+Missing out on importing Response from Flask <br />
+Trying to figure out sending of json without having a TypeView error <br />
+Before dockerising flask app was to run with host and port commands  <br />
+in cmd else default localhost/5000 kicks in <br />
+dnspython was a library I missed out on <br />
+It had to be added to requirement so necessary change was added to pymongo <br />
+to include extras <br />
+Another issue was docker getting in trouble with pip and pip3 <br />
+An extensive search for the same gave a workaround using IF condition to  <br />
+explicitly specify the correct usage and not get into trouble <br />
 Common errors to be faced when starting crud operations would be
-Connection Refused (Check host and port default is 0.0.0.0 and 5001)
-TypeView error (variety of reasons most common being treatment of request response)
-Method not allowed could have popped up when incorrect operation is used (for example to specify get method only in app code and tried post operation)
+Connection Refused (Check host and port default is 0.0.0.0 and 5001) <br />
+TypeView error (variety of reasons most common being treatment of request response) <br />
+Method not allowed could have popped up when incorrect operation is used  <br />
+(for example to specify get method only in app code and tried post operation)
