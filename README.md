@@ -30,7 +30,7 @@ For CRUD operations (GET,POST,PUT,DELETE)
 import libraries pymongo,flask
 ### CRUD operations
 
-Class MongoAPI is defined to interact with mongodb\n
+Class MongoAPI is defined to interact with mongodb  <br />
 Connection to cluster is defined inside __init__ function
 
 Client is predefined and database and cluster names are to be passed.
@@ -41,13 +41,13 @@ Database used is loaded in
 database : Example
 collection : test1
 
-After running the project using docker run \n
+After running the project using docker run
 Go to http://0.0.0.0:5001/mongodb (page for queries)
 
 Sending database and collection info is necessary for any operation
 
 READ
-Send database and collection info as json it returns the whole data
+Send database and collection info as json. It returns the whole data
 ```
 @app.route('/mongodb', methods=['GET'])
 def mongo_read():
