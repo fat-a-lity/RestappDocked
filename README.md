@@ -83,11 +83,10 @@ Send the default info plus filter (any attribute to identify the document you wa
 
 That's it for the CRUD operations
 
-###Approach
+### Approach
 
 Being the first ever Flask, Mongodb, Docker Project I ever touched and being the first time hearing concept of REST api,
-first step was learning these concepts starting from REST api
-@ishmeet1995 was the main source of learning and can see a major influence in the code too.
+First step was learning these concepts starting from REST api
 
 Database was set up in Mongodb Atlas
 I used MongoDb Compass to view the database
@@ -95,11 +94,11 @@ Some troublesome codes where
 Missing out on importing Response from Flask
 Trying to figure out sending of json without having a TypeView error
 Before dockerising flask app was to run with host and port commands in cmd else default localhost/5000 kicks in
-dnspython was a library I missed out on.
+dnspython was a library I missed out on
 It had to be added to requirement so necessary change was added to pymongo to include extras
 Another issue was docker getting in trouble with pip and pip3
 An extensive search for the same gave a workaround using IF condition to explicitly specify the correct usage and not get into trouble
 Common errors to be faced when starting crud operations would be
 Connection Refused (Check host and port default is 0.0.0.0 and 5001)
 TypeView error (variety of reasons most common being treatment of request response)
-Method not allowed could have popped up when incorrect operation is used (maybe u specify get method only and tried post)
+Method not allowed could have popped up when incorrect operation is used (for example to specify get method only in app code and tried post operation)
