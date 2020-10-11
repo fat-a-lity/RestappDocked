@@ -30,7 +30,7 @@ For CRUD operations (GET,POST,PUT,DELETE)
 import libraries pymongo,flask
 ### CRUD operations
 
-Class MongoAPI is defined to interact with mongodb
+Class MongoAPI is defined to interact with mongodb\n
 Connection to cluster is defined inside __init__ function
 
 Client is predefined and database and cluster names are to be passed.
@@ -41,8 +41,9 @@ Database used is loaded in
 database : Example
 collection : test1
 
-After running the project using docker run
-Go to http://0.0.0.0:5001/mongodb
+After running the project using docker run \n
+Go to http://0.0.0.0:5001/mongodb (page for queries)
+
 Sending database and collection info is necessary for any operation
 
 READ
@@ -159,8 +160,9 @@ Being the first ever Flask, Mongodb, Docker Project I ever touched and being the
 First step was learning these concepts starting from REST api
 
 Database was set up in Mongodb Atlas
-I used MongoDb Compass to view the database
-Some troublesome codes where
+MongoDb Compass was used to view the database and changes
+Some troublesome codes were
+
 Missing out on importing Response from Flask
 Trying to figure out sending of json without having a TypeView error
 Before dockerising flask app was to run with host and port commands in cmd else default localhost/5000 kicks in
