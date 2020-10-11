@@ -81,24 +81,24 @@ Send the default info plus filter (any attribute to identify the document you wa
 }
 ```
 
-...Thats it for the CRUD operations
+That's it for the CRUD operations
 
-###Problems i ran into early on
+###Approach
 
-Being the first ever Flask,Mongodb,Docker Project i ever touched and being the first time hearing concept of REST api,
+Being the first ever Flask, Mongodb, Docker Project I ever touched and being the first time hearing concept of REST api,
 first step was learning these concepts starting from REST api
 @ishmeet1995 was the main source of learning and can see a major influence in the code too.
 
-Now initial thoughts was setting up mongodb without atlas and half way down i felt atlas was a lot easier for the same task.
+Database was set up in Mongodb Atlas
 I used MongoDb Compass to view the database
 Some troublesome codes where
 Missing out on importing Response from Flask
-Trying to figure out sending of json without having a Typeviewerror
+Trying to figure out sending of json without having a TypeView error
 Before dockerising flask app was to run with host and port commands in cmd else default localhost/5000 kicks in
-dnspython was a library i missed out on.
+dnspython was a library I missed out on.
 It had to be added to requirement so necessary change was added to pymongo to include extras
 Another issue was docker getting in trouble with pip and pip3
-An extensive search for the same gave a workaround using IF condition to explicitely specify the correct usage and not get into trouble
+An extensive search for the same gave a workaround using IF condition to explicitly specify the correct usage and not get into trouble
 Common errors to be faced when starting crud operations would be
 Connection Refused (Check host and port default is 0.0.0.0 and 5001)
 TypeView error (variety of reasons most common being treatment of request response)
